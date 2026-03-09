@@ -6,37 +6,26 @@ int main()
 
     printf("Prueba del TAD Pelicula\n");
 
-    /* TODO
-       Crear una película
-    */
-    Pelicula* p = NULL;
+    //Crear una película
+    Pelicula* p = crearPelicula("El zorro y el sabueso", 1981, "Animacion");
 
+    //Agregar algunos directores
+    agregarDirector(p, "Ted Berman");
+    agregarDirector(p, "Richard Rich");
+    agregarDirector(p, "Art Stevens");
 
-    /* TODO
-       Agregar algunos directores
-    */
+    //Imprimir película
+    imprimir(p);
 
-
-    /* TODO
-       Imprimir película
-    */
-
-
+    //Cambiar genero
     printf("\nCambiar genero\n");
+    cambiarGenero(p, "Familiar");
 
-    /* TODO
-       Cambiar genero
-    */
+    //Imprimir nuevamente
+    imprimir(p);
 
-
-    /* TODO
-       Imprimir nuevamente
-    */
-
-
-    /* TODO
-       Liberar memoria
-    */
+    //Liberar memoria
+    destruir(p);
 
     return 0;
 }
