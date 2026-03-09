@@ -7,7 +7,6 @@ int main()
     printf("Prueba del TAD Fraccion\n");
 
     // 1 Crear dos fracciones
-   
     Fraccion* f1 = crearFraccion(1, 3);
     Fraccion* f2 = crearFraccion(4, 5);
  
