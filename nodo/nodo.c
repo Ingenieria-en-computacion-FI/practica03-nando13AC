@@ -8,7 +8,7 @@
 */
 struct Nodo
 {
-    /* TODO */
+    int valor;
 };
 
 
@@ -21,8 +21,17 @@ Nodo* crearNodo(int valor)
        3 Inicializar el valor del nodo
        4 Regresar el nodo
     */
+        Nodo* n = (Nodo*) malloc(sizeof(Nodo));
 
-    return NULL;
+    if (n == NULL)
+    {
+        printf("Error: no se pudo asignar memoria\n");
+        return NULL;
+    }
+
+    n->valor = valor;
+
+    return n;
 }
 
 
@@ -33,8 +42,13 @@ int obtenerValor(Nodo* nodo)
        1 Verificar que el nodo no sea NULL
        2 Regresar el valor almacenado
     */
+    if (nodo == NULL)
+    {
+        printf("Error: nodo NULL\n");
+        return 0;
+    }
 
-    return 0;
+    return nodo->valor;
 }
 
 
@@ -45,6 +59,13 @@ void asignarValor(Nodo* nodo, int valor)
        1 Verificar que el nodo no sea NULL
        2 Asignar el nuevo valor
     */
+    if (nodo == NULL)
+    {
+        printf("Error: nodo NULL\n");
+        return;
+    }
+
+    nodo->valor = valor;
 }
 
 
@@ -54,4 +75,5 @@ void destruirNodo(Nodo* nodo)
     /* TODO
        Liberar la memoria usando free
     */
+    free(nodo);
 }
